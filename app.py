@@ -63,7 +63,6 @@ def set_bg(png_file):
         """
         st.markdown(bg_css, unsafe_allow_html=True)
 
-
 # ------------------- RESUME PARSER -------------------
 def extract_text_from_pdf(pdf_file):
     text = ""
@@ -116,9 +115,20 @@ def get_skills(text):
     return [kw for kw in keywords if kw.lower() in text.lower()]
 
 def calculate_score(user_skills, required_skills):
-    vectorizer = CountVectorizer().fit_transform([" ".join(user_skills), " ".join(required_skills)])
-    vectors = vectorizer.toarray()
-    return round(cosine_similarity([vectors[0]], [vectors[1]])[0][0] * 100, 2)
+    # Clean and join the skills
+    user_text = " ".join([skill.strip() for skill in user_skills if skill.strip()])
+    required_text = " ".join([skill.strip() for skill in required_skills if skill.strip()])
+
+    # Handle empty or stopword-only inputs
+    if not user_text or not required_text:
+        return 0.0
+
+    try:
+        vectorizer = CountVectorizer().fit_transform([user_text, required_text])
+        vectors = vectorizer.toarray()
+        return round(cosine_similarity([vectors[0]], [vectors[1]])[0][0] * 100, 2)
+    except ValueError:
+        return 0.0
 
 # ------------------- FEEDBACK -------------------
 def generate_feedback(matched, missing):
@@ -216,7 +226,11 @@ def main():
     else:
         required_skills_input = st.sidebar.text_area("Enter Required Skills (comma-separated)",
                                                     "Python, SQL, Machine Learning, Power BI")
-        required_skills = [x.strip().lower() for x in required_skills_input.split(",")]
+        required_skills = [x.strip().lower() for x in required_skills_input.split(",") if x.strip()]
+
+    if not required_skills:
+        st.warning("⚠ No valid skills provided in the job description or required skills input. Please specify relevant skills.")
+        return
 
     st.header("📤 Upload Resume")
     uploaded_file = st.file_uploader("Upload a PDF Resume", type=["pdf"])
@@ -241,9 +255,13 @@ def main():
         st.info(check_resume_freshness(resume_text))
 
         user_skills = get_skills(resume_text)
+        if not user_skills:
+            st.warning("⚠ No relevant skills detected in the resume. Ensure skills like Python, SQL, etc., are mentioned.")
+            return
+
         matched = [s for s in user_skills if s in required_skills]
         missing = [s for s in required_skills if s not in user_skills]
-        score = calculate_score(matched, required_skills)
+        score = calculate_score(user_skills, required_skills)
 
         st.subheader("✅ Skill Match Results")
         st.success(f"🔢 Match Score: {score}%")
@@ -297,7 +315,7 @@ def main():
                     "Skill": matched + missing,
                     "Status": ["Matched"] * len(matched) + ["Missing"] * len(missing)
                 })
-                st.dataframe(df.style.map(
+                st.dataframe(df.style.applymap(
                     lambda x: 'background-color: #d4edda' if x == "Matched" else 'background-color: #f8d7da',
                     subset=["Status"]
                 ))
