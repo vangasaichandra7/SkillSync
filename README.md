@@ -24,27 +24,25 @@
 
 ## 📸 Project Screenshots
 
+## 📸 Project Screenshots
+
 ### 🖥️ Interface
-![Interface](screenshots/interface.png.png)
+![Interface](screenshots/interface.png)
 
 ### 📤 Upload Resume
-![Upload Resume](screenshots/upload%20resume%20file.png.png)
+![Upload Resume](screenshots/upload resume file.png)
 
 ### 📋 Resume Content
-![Resume Content](screenshots/resume%20content.png.png)
+![Resume Content](screenshots/resume content.png)
 
 ### 🎯 Skills & Feedback
-![Skills & Feedback](screenshots/Skills%20&%20Feedback.png.png)
+![Skills & Feedback](screenshots/Skills & Feedback.png)
 
 ### 📈 Technical Suggestions
-![Technical](screenshots/technical.png.png)
+![Technical](screenshots/technical.png)
 
 ### 📊 Analytics View
-![Data Analytics](screenshots/Data%20analytics%20.png.png)
-
-### 🔎 Detailed View
-![Extra View](screenshots/Screenshot%202025-07-13%20123144.png)
-![Insights](screenshots/Screenshot%202025-07-13%20123658.png)
+![Data Analytics](screenshots/Data analytics.png)
 
 
 ```python
