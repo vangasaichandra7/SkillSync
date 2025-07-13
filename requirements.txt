@@ -1,6 +1,6 @@
 streamlit
-pdfplumber
-spacy
+pymupdf
+scikit-learn
+pandas
 matplotlib
-wordcloud
-nltk
+fpdf
