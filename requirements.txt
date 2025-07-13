@@ -1,0 +1,6 @@
+streamlit
+pdfplumber
+spacy
+matplotlib
+wordcloud
+nltk
