@@ -24,8 +24,6 @@
 
 ## 📸 Project Screenshots
 
-## 📸 Project Screenshots
-
 ### 🖥️ Interface
 ![Interface](screenshots/interface.png)
 
@@ -39,11 +37,10 @@
 ![Skills & Feedback](screenshots/skills_feedback.png)
 
 ### 📈 Technical Suggestions
-![Technical Suggestions](screenshots/technical_suggestions.png)
+![Technical Suggestions](screenshots/technical.png)
 
 ### 📊 Analytics View
 ![Data Analytics](screenshots/data_analytics.png)
-
 
 ```python
 streamlit run app.py
