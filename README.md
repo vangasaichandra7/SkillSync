@@ -22,8 +22,26 @@
 - Matplotlib
 - Regex
 
-## 🖼 Screenshot
-*(Add a screenshot of your app interface here)*
+## 📸 Project Screenshots
+
+### 🏁 Interface - Welcome Page
+![Interface](screenshots/interface.png)
+
+### 📤 Upload Resume Page
+![Upload Resume](screenshots/upload%20resume%20file.png)
+
+### 📋 Resume Content Extraction
+![Resume Content](screenshots/resume%20content.png)
+
+### ✅ Skill Match & Feedback
+![Skills & Feedback](screenshots/Skills%20&%20Feedback.png)
+
+### 🧠 Technical Suggestions
+![Technical](screenshots/technical.png)
+
+### 📊 Data Analytics Dashboard
+![Data Analytics](screenshots/Data%20analytics%20.png)
+
 
 ```python
 streamlit run app.py
