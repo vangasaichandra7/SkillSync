@@ -30,19 +30,19 @@
 ![Interface](screenshots/interface.png)
 
 ### 📤 Upload Resume
-![Upload Resume](screenshots/upload resume file.png)
+![Upload Resume](screenshots/upload_resume_file.png)
 
 ### 📋 Resume Content
-![Resume Content](screenshots/resume content.png)
+![Resume Content](screenshots/resume_content.png)
 
 ### 🎯 Skills & Feedback
-![Skills & Feedback](screenshots/Skills & Feedback.png)
+![Skills & Feedback](screenshots/skills_feedback.png)
 
 ### 📈 Technical Suggestions
-![Technical](screenshots/technical.png)
+![Technical Suggestions](screenshots/technical_suggestions.png)
 
 ### 📊 Analytics View
-![Data Analytics](screenshots/Data analytics.png)
+![Data Analytics](screenshots/data_analytics.png)
 
 
 ```python
